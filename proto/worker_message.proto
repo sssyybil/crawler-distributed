@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package crawler.distributed.worker;
+
+option go_package = "crawler-distributed/pb";
+
+import "itemsaver_message.proto";
+
+message SerializedRequest{
+  string url = 1;
+  ParserFunc parser = 2;
+}
+
+message ParserFunc {
+  string functionName = 1;
+  string args = 2;
+}
+
+message SerializedParserResult {
+  repeated itemsaver.Item items = 1;
+  repeated SerializedRequest request = 2;
+}

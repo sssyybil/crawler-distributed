@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package crawler.distributed.worker;
+
+option go_package = "crawler-distributed/pb";
+
+import "worker_message.proto";
+
+service CrawlService{
+  rpc Process(SerializedRequest) returns(SerializedParserResult){}
+}

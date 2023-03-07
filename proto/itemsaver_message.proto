@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package crawler.distributed.itemsaver;
+
+option go_package = "crawler-distributed/pb";
+
+message Item{
+  string url = 1;
+  string id = 2;
+  string type = 3;
+  Profile profile = 4;
+}
+
+message Profile{
+  string name = 1;
+  string gender = 2;
+  uint32 age = 3;
+  float height = 4;
+  float weight = 5;
+  string income = 6;
+  string marriage = 7;
+  string education = 8;
+  string occupation = 9;
+  string huKou = 10;
+  string xinZuo = 11;
+  string house = 12;
+  string car = 13;
+  string commonInfo = 14;
+}

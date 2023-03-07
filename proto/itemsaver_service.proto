@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package crawler.distributed.itemsaver;
+
+option go_package = "crawler-distributed/pb";
+
+import "itemsaver_message.proto";
+
+message ItemSaverRequest{
+  Item item = 1;
+}
+
+message ItemSaverResponse{
+  string msg = 1;
+}
+
+service ItemSaverService{
+  rpc Save(ItemSaverRequest) returns(ItemSaverResponse){}
+}
